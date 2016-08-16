@@ -59,7 +59,7 @@ body{
 			<input type="submit" name="submit" value="Submit">
 			</fieldset>
 		</form>
-		<%String prntStatus=request.getParameter("hidden"); %>
+		<%String prntStatus=request.getParameter("msg"); %>
 		<%=prntStatus %>
 			
 	</div>
