@@ -31,6 +31,15 @@ body{
 	</div>
 	<div id="section">
 		<p>Hello <%= session.getAttribute("name") %><p>
+		<% System.out.println("login "+session.getAttribute("login")); %>
+		<% 	response.setHeader("Cache-Control","no-cache");
+  			response.setHeader("Cache-Control","no-store");
+  			response.setHeader("Pragma","no-cache");
+  			response.setDateHeader ("Expires", 0); 
+  			if(session.getAttribute("login")==null)
+  		      response.sendRedirect("controller_inc?hidden=logout"); 
+  			
+  		%>
 		The current date is: <%= new java.util.Date() %><br>
 		
 		<form action="controller_inc" method="post">
