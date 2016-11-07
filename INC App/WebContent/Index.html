@@ -1,15 +1,20 @@
 <html>
 <head>
-<title>INC Tracker</title>
-<meta name="author" content="rohit sahay / sivesh kumar">
-<meta name="description" content="Inc Tracker">
-<link rel='stylesheet' type='text/css' href='css/index.css'>
-<style>
-body{
-	background-image: url("images/backimg.jpg");
-	margin:0;
-}
-</style>
+	<title>INC Tracker</title>
+	<meta name="author" content="rohit sahay">
+	<meta name="description" content="Inc Tracker">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	
+	<link rel='stylesheet' type='text/css' href='css/index.css'>
+	<style>
+	body{
+		background-image: url("images/backimg3.jpg");
+		margin:0;
+	}
+	</style>
+	<script type="text/javascript" src="js/formValidation.js" ></script>
+	
 </head>
 
 <body>
@@ -22,18 +27,18 @@ body{
 		</ul>
 	</div>
 	<div id="section">
-		<h2>Incident management,identify, analyze, and correct hazards to prevent a future re-occurrence,</h2>
+		<h2 id="roh1">Incident management,identify, analyze, and correct hazards to prevent a future re-occurrence,</h2>
 		<h2> root cause analysis, resolution time </h2>
 	</div>
 	<div id="aside">
 		<p>Login form</p>
-		<form action="controller_inc" method="post" name="login form">
+		<form action="controller_inc" method="post" name="login_form" onsubmit="return formValidateNew()">
 			<fieldset>
 				<legend> Log In</legend>
 				CEC ID:<br>
-				<input type="text" name="cec_id"><br>
+				<input id="id" type="text" name="cec_id" placeholder="Enter CEC ID"  autofocus max="8" min="2"><br> <!--  required does automatic validation of form -->
 				Password:<br>
-				<input type="password" name="pswrd"><br>
+				<input id="pass" type="password" name="pswrd" placeholder="Enter password"  ><br>
 				<input type="radio" name="usr_adm" value="user" checked>user 
 				<input type="radio" name="usr_adm" value="admin">admin<br>
 				<input type="hidden" name="hidden" value="login"> 
@@ -51,6 +56,8 @@ body{
 	<div id="footer">
 		&#169;rohsahay@cisco.com | Help | Feedback
 	</div>
+	
+
 
 </body>
 
