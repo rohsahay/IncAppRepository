@@ -3,7 +3,7 @@ function formValidateNew(){
 	var y = null;
     var re = /^\w+$/;
     
-    x=document.forms["login_form"]["cec_id"].value;
+    x=document.getElementById("cec").value;
 	y=document.getElementById("pass").value;
     
 		  

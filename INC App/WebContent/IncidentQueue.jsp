@@ -7,7 +7,7 @@
 <title>INC Tracker</title>
 <meta name="author" content="rohit sahay">
 <meta name="description" content="Inc Tracker">
-<link rel='stylesheet' type='text/css' href='css/userview.css'>
+<link rel='stylesheet' type='text/css' href='css/otherPages.css'>
 <!--  <style>
 body{
 	background-image: url("images/backimg.jpg");

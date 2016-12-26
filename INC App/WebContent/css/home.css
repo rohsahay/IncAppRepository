@@ -1,0 +1,21 @@
+body {
+	margin-left: 20%;
+	margin-right: 20%;  								
+	padding: 10px 10px 10px 10px; 
+	font-family: sans-serif;
+	font-size:small;									 	
+	text-align:center;										
+	background: url("../images/backimg3.jpg"); 
+	color:#000000;											
+}
+#header {
+	font-family:"Comic Sans","Apple Chancery", monospace ;
+	color:#FF0000;
+	font-size:100%;			
+}
+#trunk {
+	margin-left: 20%;
+	margin-right: 20%; 
+	padding: 80px 10px 80px 10px;
+}
+

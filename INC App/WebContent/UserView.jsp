@@ -1,20 +1,13 @@
 <%@page import="dto.CounterDto"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>INC Tracker</title>
-<meta name="author" content="rohit sahay / sivesh kumar">
-<meta name="description" content="Inc Tracker">
-<link rel='stylesheet' type='text/css' href='css/userview.css'>
-<!--  <style>
-body{
-	background-image: url("images/backimg.jpg");
-	margin:0;
-}
-</style> -->
+	<title>INC Tracker</title>
+	<meta name="author" content="rohit sahay">
+	<meta name="description" content="Inc Tracker">
+	<link rel='stylesheet' type='text/css' href='css/otherPages.css'>
 </head>
 
 <body>

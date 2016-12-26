@@ -1,0 +1,89 @@
+
+body {
+/*	background-color: #eaf3da; 
+	background-repeat: no-repeat;                           /repeat,repeat-x,repeat-y,inherit,no-repeat ,default is repeat
+	background-position: top left;							/default is top left, can be set using pixel, percentage, keyword
+	border-top-color:black;
+	border-top-style:dashed;
+	border-top-width:thick;									/px can also be used instead of keyword
+	background: white url(images/cocktail.gif) repeat-x;
+	font: font-style font-variant font-weight font-size/line-height font-family; /shorthand for font	
+	float:right;											/for a float element to be seeable, it should have a width, right or left can be used
+	width:200px;											/the width selector let you select the width of the content area of the element(excluding padding,border width,margin), if not set the default width is auto, can be specified in px & percentage of parent element.
+	height:200px;											/default is auto and is preferable
+	
+	[position:absolute;										/elements don't wrap around the absolute positioned element, they just ignore it, they don't have a float effect, static,absolute,fixed,relative
+	top:px;													/static is default position value for any element
+	right:px:
+	bottom:px;
+	left:px; 
+	z-index:99]
+	
+*/
+	margin-left: 20%;
+	margin-right: 20%; 
+	border: 1px dashed gray; 								/* solid,double,groove,outset,dotted,dashed,inset,ridges */
+	padding: 10px 10px 10px 10px; 
+	font-family: sans-serif;
+	font-size:small;									 	/*font size can also be defined in px or xx-small,x-small,small,medium,large,x-large,xx-large keywords */
+	text-align:center;										/*works good on any inline element (text,image etc) */
+	background: url("../images/backimg3.jpg"); 
+	color:#000000;											/*color can be specified by name,hex-code,relative percentage or 0-255 range, color property is specfically the forground color of the element */
+}
+
+#header {
+	font-family:"Comic Sans","Apple Chancery", monospace ;  /*there are five types of font-families:serif,sans-serif,monospace,cursive,fantasy */
+	            		   									/*each font-family has a large set of fonts available */
+	color:#FF0000;
+	font-size:100%;											/*font size in % or em are relative to font size inherited from parent element, if specified in parent element it is relative to default size set by browser */ 
+/*	text-decoration:line-through; 							underline,overline,line-through or none are some of the options for text decoration
+	border-bottom: 1px solid gray; 
+	font-weight:bold;
+	font-style:italic;
+	background-color:rgb(80%,40%,0%);
+	line-height:2em;
+*/
+}
+#trunk {
+	margin-left: 20%;
+	margin-right: 20%;
+	border: 1px dotted gray; 
+	padding: 80px 10px 80px 10px;
+}
+#footer {
+/*	clear:right; 											/no floating element is permitted at the right of the element */
+}
+
+a:link {													/*link styles use pseudo class*/
+	color: green;
+}
+
+a:visited {
+	color: red;
+}
+
+a:hover {
+	color: yellow;
+}
+table {
+	border-spacing: 10px 30px;								/* sets ten pixels of horizontal border space and thirty pixels of vertical border space. */
+	margin-left: 20px;
+	margin-right: 20px;
+	border: thin solid black;
+	caption-side: bottom;
+	border-collapse: collapse;								/* collapse the borders so that there is no border spacing at all */
+}
+/*
+a:focus {}
+
+a:active{}
+*/
+
+/*decendent selector
+div h2 {
+	
+}
+#header h2{
+	/more specific
+}
+*/

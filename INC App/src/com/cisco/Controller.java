@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.*;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
+
 
 
 
@@ -55,7 +55,7 @@ public class Controller extends HttpServlet {
 			else if(n.equals("logout")){
 				//this flow is successful
 				logger.info("redirecting to welcome page");
-				response.sendRedirect("Index.html");
+				response.sendRedirect("Home.xhtml");
 				
 			}
 // to view user profile			

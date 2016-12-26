@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*,dto.IncDto" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>INC Tracker</title>
 <meta name="author" content="rohit sahay">
 <meta name="description" content="Inc Tracker">
-<link rel='stylesheet' type='text/css' href='css/userview.css'>
+<link rel='stylesheet' type='text/css' href='css/otherPages.css'>
 <!--  <style>
 body{
 	background-image: url("images/backimg.jpg");
@@ -44,7 +45,7 @@ body{
 		
 		<form action="controller_inc" method="post">
 			<fieldset>
-			<table style="width=100%">
+			<table summary="This table is used to submit INCs">
 				<caption>Fill in the requested details. All fields are mandatory</caption>
 				<tr>
 					<th>Case#</th>

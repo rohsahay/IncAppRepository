@@ -1,0 +1,16 @@
+table {
+border: none;
+padding: 10px;
+margin: 0 auto;
+}
+th {
+text-align: center;
+vertical-align: top;
+padding-right: 10px;
+padding-top: 2px;
+}
+td {
+text-align: left;
+vertical-align: top;
+padding-bottom: 15px;
+}
