@@ -11,7 +11,7 @@ body {
 	float:right;											/for a float element to be seeable, it should have a width, right or left can be used
 	width:200px;											/the width selector let you select the width of the content area of the element(excluding padding,border width,margin), if not set the default width is auto, can be specified in px & percentage of parent element.
 	height:200px;											/default is auto and is preferable
-	
+	margin: auto;											/margin property to auto to horizontally center the element within its container.
 	[position:absolute;										/elements don't wrap around the absolute positioned element, they just ignore it, they don't have a float effect, static,absolute,fixed,relative
 	top:px;													/static is default position value for any element
 	right:px:
@@ -51,7 +51,7 @@ body {
 	padding: 80px 10px 80px 10px;
 }
 #footer {
-/*	clear:right; 											/no floating element is permitted at the right of the element */
+/*	clear:right; 											/no floating element is permitted at the right of the element left,right,both */
 }
 
 a:link {													/*link styles use pseudo class*/
@@ -72,6 +72,9 @@ table {
 	border: thin solid black;
 	caption-side: bottom;
 	border-collapse: collapse;								/* collapse the borders so that there is no border spacing at all */
+}
+p {
+	display : none;											/* 'none' to have an element hidden, other values are inline,block	*/
 }
 /*
 a:focus {}

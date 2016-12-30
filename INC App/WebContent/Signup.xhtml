@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+		<title>INC Tracker</title>
+		<meta name="author" content="rohit sahay" />
+		<meta name="description" content="Inc Tracker" />
+		<link rel='stylesheet' type='text/css' href='css/signup.css' media="screen"/>
+		<link rel='stylesheet' type='text/css' href='css/styledForm.css' media="screen"/>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("input").focus(function(){
+		    		$(this).css("background-color", "#9AD7FF");
+				});
+				$("input").blur(function(){
+		    		$(this).css("background-color", "#ffffff");
+				});
+			});
+		</script>
+</head>
+
+<body>											<!-- This page shows liquid layout design -->
+	<div id="trunk2">
+		<br /><br />
+		<h1>Sign Up</h1>
+		<p>Fill up the form below to take advantage of our services</p>
+		<form action="controller_inc" method="get">
+				<table>
+					<tr><td>First Name:</td><td><input type="text" name="fname" value="enter your first name" /></td></tr>
+					<tr><td>Last Name:</td> <td><input type="text" name="lname" value="enter your last name" /></td></tr>
+					<tr><td>Email Address:</td><td> <input type="text" name="email" value="example@cisco.com" /></td></tr>
+					<tr><td>CEC ID: </td><td><input type="text" name="cec_id" value="enter your cec id" /></td></tr>
+					<tr><td>Password:</td><td> <input type="password" name="pswrd" /></td></tr>
+					<tr><td>Comments:</td><td><textarea rows="4" cols="50"></textarea></td></tr>
+				</table> 
+		</form>
+		<input type="hidden" name="hidden" value="signup" />
+		<input type="submit" name="submit" value="SignUp" />
+	</div>
+	<div id="trunk1"></div>
+</body>
+
+</html>

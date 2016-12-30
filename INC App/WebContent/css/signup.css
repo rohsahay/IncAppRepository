@@ -1,0 +1,11 @@
+#trunk1 {
+	background: white url("../images/backimg3.jpg") no-repeat;
+	height:700px;
+}
+#trunk2 {
+	float:right;
+	background-color:#ffff00;
+	height:700px;
+	padding:0px 10px 0px 50px;
+	width:600px;	
+}
