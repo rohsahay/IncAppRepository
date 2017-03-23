@@ -16,13 +16,12 @@ public class ConnectionFactory {
 		
 			
 				
-	//for connection without pool, direct connection to DB
+	//###for connection without pool, direct connection to DB####
 	//			Class.forName("oracle.jdbc.driver.OracleDriver");
 	//			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","rohit","sahay");
 				
-	//for pooled connection
-	//copy jdbc driver jar in server /lib folder
-	//make entry in web.xml (edit only from eclipse)
+	//###for pooled connection###
+	//copy jdbc driver jar in server's /lib folder
 	//create datasource in context.xml (edit only from eclipse)
 				Context initContext = new InitialContext();
 				Context envContext  = (Context)initContext.lookup("java:/comp/env");
