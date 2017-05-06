@@ -9,8 +9,10 @@
 	
 	<link rel='stylesheet' type='text/css' href='css/home.css' media="screen"/>  <!-- media determines the style for the page on target device, different css can be used for different media  -->
 	<link rel='stylesheet' type='text/css' href='css/styledForm.css' media="screen"/>
-	<script type="text/javascript" src="js/formValidation.js" ></script>
 	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<!-- 	<script type="text/javascript" src="js/formValidation.js" ></script> -->
+	<script type="text/javascript" src="js/formValidation_jquery.js" ></script>
+	
 	<script>
 		$(document).ready(function(){
 			$("input").focus(function(){
@@ -38,7 +40,7 @@
 
 	<div id="trunk">
 		
-		<form action="controller_inc" method="post" id="login_form" onsubmit="return formValidateNew()">						
+		<form action="controller_inc" method="post" id="login_form">						
 			<table>
 				<tr> <td>CEC ID:</td> <td><input id="cec" type="text" name="cec_id" /></td> </tr>
 				<tr> <td>Password:</td> <td><input id="pass" type="password" name="pswrd" /></td> </tr>
