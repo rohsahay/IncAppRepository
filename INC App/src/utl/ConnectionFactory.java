@@ -1,3 +1,7 @@
+// For getting physical connection without any pooling
+// For getting pooled connection from tomcat jdbc connection pool as set in context.xml
+// Not to be used for Hibernate sessions & pooled connections
+
 package utl;
 
 import java.sql.Connection;

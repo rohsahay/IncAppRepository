@@ -22,5 +22,8 @@
     	<logger name="handler" level="info" additivity="false">
     		<AppenderRef ref="Console" />
     	</logger>
+    	<logger name="org.hibernate" level="info" additivity="false">
+    		<AppenderRef ref="Console" />
+    	</logger>
     </Loggers>
 </Configuration>

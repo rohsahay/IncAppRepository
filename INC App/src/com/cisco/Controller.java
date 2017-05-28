@@ -97,7 +97,7 @@ public class Controller extends HttpServlet {
 			}
 			else if(n.equals("delete_inc")){
 				logger.info("in controller for deletion");
-				logger.info("value of c in controller"+request.getParameter("c"));
+				logger.info("value of c in controller "+request.getParameter("c"));
 				logger.info("value of act "+request.getParameter("act"));
 				RequestDispatcher rd=request.getRequestDispatcher("deleteHandler");
 				rd.forward(request, response);

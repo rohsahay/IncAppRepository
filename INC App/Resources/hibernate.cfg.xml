@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
+  
+<hibernate-configuration>  
+  
+    <session-factory>
+    	<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<!-- Pretty print the SQL in the log and console -->
+		<property name="hibernate.format_sql">true</property>
+		<!--If enabled, Hibernate will collect statistics useful for performance tuning.  -->
+<!-- 	<property name="hibernate.generate_statistics">true</property> -->
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		
+		<!-- Enable Hibernate's automatic session context management -->
+		<!-- <property name="current_session_context_class">thread</property> -->
+		
+		<!-- JDBC connection pool (to use the built-in con pool, not for prod, can be replaced with c3p0 or proxool) -->
+	  	<property name="connection.pool_size">10</property>
+		
+		<!-- To use hibernate with tomcat datasource -->
+<!--  	<property name="hibernate.connection.datasource">java:comp/env/jdbc/myoracle</property> -->
+		
+    	<!-- Drop and re-create the database schema on startup -->  
+<!--    <property name="hbm2ddl.auto">update</property> -->
+        
+        <!-- SQL dialect -->  
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        
+        <!-- Database connection settings -->  
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>  
+        <property name="connection.username">rohit</property>  
+        <property name="connection.password">sahay</property>  
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+          
+    	<mapping resource="loginDto.hbm.xml"/> 
+       	<mapping resource="incDto.hbm.xml"/> 
+    </session-factory>  
+  
+</hibernate-configuration> 

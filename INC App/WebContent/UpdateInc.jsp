@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*,dto.IncDto" %>
+<%@ page import="java.util.*,dto.IncDto2,java.text.DateFormat,java.text.SimpleDateFormat" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,7 +25,7 @@ body{
 		<ul>
 			<li><a href="CreateInc.jsp">New Incident</a></li>
 			<li><a href="UserView.jsp">My Profile</a></li>
-			<li><a href="Controller?hidden=inc_queue_view&a=1&b=10">Incident Queue</a></li>
+			<li><a href="Controller?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
 			<li><a href="#">Link Four</a></li>
 			<li><a href="#">Link Five</a></li>
 		</ul>
@@ -56,14 +56,16 @@ body{
 					<th>Current Status</th>
 					<th>Comment</th>
 				</tr>
-				<%ArrayList<IncDto> inc=new ArrayList<IncDto>();
+				<%ArrayList<IncDto2> inc=new ArrayList<IncDto2>();
 				inc=(ArrayList)request.getAttribute("Inclist"); 
 				Iterator itr=inc.iterator();
-				IncDto incident=(IncDto)itr.next();	
+				IncDto2 incident=(IncDto2)itr.next();
+				System.out.println("value of c in update.jsp"+request.getParameter("c"));
+				DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 				%>
 				<tr>
 					<td><textarea name="case_nmbr"><%=incident.getCasenmbr()%></textarea></td>
-					<td><input type="date" name="Assign_date"></td>
+					<td><input type="date" name="Assign_date" value="<%=dateFormat.format(incident.getDate())%>"></td>
 					<td><textarea name="desc"><%=incident.getDesc()%></textarea></td>
 					<td><textarea name="pendig_with"><%=incident.getPendingwth()%></textarea></td>
 					<td><textarea name="status"><%=incident.getStatus()%></textarea></td>
@@ -73,6 +75,7 @@ body{
 			<input type="hidden" name="hidden" value="update_inc">
 			<input type="hidden" name="a" value="<%=request.getParameter("a")%>">
 			<input type="hidden" name="b" value="<%=request.getParameter("b")%>">
+			<input type="hidden" name="c" value="<%=request.getParameter("c")%>">
 			<input type="hidden" name="act" value="<%=request.getParameter("act")%>">
 			<input type="hidden" name="filter" value="<%=incident.getCasenmbr()%>">
 			<input type="submit" name="submit" value="Update">

@@ -44,7 +44,7 @@
 			<table style="width=100%">
 				<caption>Below are the incident details</caption>
 				<tr>
-					<th>Sr.No.</th>
+					<th>Sr No</th>
 					<th>Case#</th>
 					<th>Assigned Date/Time</th>
 					<th>Description</th>
@@ -60,12 +60,12 @@
 				
 				while(itr.hasNext()){
 					IncDto incident=(IncDto)itr.next();	
+					String x,y;
+					x=incident.getSerialNo(); 
+					y=incident.getCasenmbr();
 				%>
 				<tr>
-				<td><%=incident.getSerialNo()%></td>
-				<%String x,y;
-				x=incident.getSerialNo();
-				y=incident.getCasenmbr();%>
+		 		<td><%=incident.getSerialNo()%></td> 
 				<td><%=incident.getCasenmbr()%></td>
 				<td><%=incident.getDate()%></td>
 				<td><%=incident.getDesc()%></td>
@@ -73,7 +73,7 @@
 				<td><%=incident.getStatus()%></td>
 				<td><%=incident.getComnt()%></td>
 				<td><%=incident.getAnalyst()%></td>
-	 			<td><a class="editbutton" href="Controller?hidden=inc_queue_view&a=<%=x%>&b=<%=x%>&act=edit">Edit</a></td>
+	  	 		<td><a class="editbutton" href="Controller?hidden=inc_queue_view&a=<%=x%>&b=<%=x%>&act=edit">Edit</a></td>
 	 			<td><a class="deletebutton" href="Controller?hidden=delete_inc&c=<%=y%>&act=delete">Delete</a></td> 
 				</tr>
 				<% } %>

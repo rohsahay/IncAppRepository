@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping package="dto">  
+  <class name="IncDto2" table="INCIDENT_TABLE">
+  	<meta attribute="class-description">
+         This class contains incident details. 
+    </meta>  
+    <id name="casenmbr" type="string" column="CASE">  
+     <generator class="assigned"></generator>  
+    </id>         
+    <property name="date" type="date" column="DATE_TIME"></property>
+    <property name="desc" type="string" column="DECRIPTION"></property>
+    <property name="pendingwth" type="string" column="PENDING_WITH"></property>
+    <property name="status" type="string" column="STATUS"></property>
+    <property name="comnt" type="string" column="COMMENTS"></property>
+    <property name="feanalyst" type="string" column="FE_ANALYST"></property>               
+  </class>             
+ </hibernate-mapping>  

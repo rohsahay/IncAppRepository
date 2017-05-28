@@ -8,7 +8,10 @@ public class IncDto {
 	private String status;
 	private String comnt;
 	private String fe_analyst;
-	private String serialNo;
+	private String SerialNo;
+	public IncDto(){
+		
+	}
 	
 	public void setCasenmbr(String casenmbr){
 		this.casenmbr=casenmbr;
@@ -52,11 +55,11 @@ public class IncDto {
 	public String getAnalyst(){
 		return fe_analyst;
 	}
-	public void setSerialNo(String serialNo){
-		this.serialNo=serialNo;
+	public void setSerialNo(String sr){
+		this.SerialNo=sr;
 	}
 	public String getSerialNo(){
-		return serialNo;
+		return SerialNo;
 	}
 
 }

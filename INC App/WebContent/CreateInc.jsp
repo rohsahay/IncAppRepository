@@ -25,7 +25,7 @@ body{
 		<ul>
 			<li><a href="CreateInc.jsp">New Incident</a></li>
 			<li><a href="UserView.jsp">My Profile</a></li>
-			<li><a href="Controller?hidden=inc_queue_view&a=1&b=10">Incident Queue</a></li>
+			<li><a href="Controller?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
 			<li><a href="#">Link Four</a></li>
 			<li><a href="#">Link Five</a></li>
 		</ul>
@@ -58,7 +58,7 @@ body{
 				
 				<tr>
 					<td><textarea name="case_nmbr"></textarea></td>
-					<td><input type="date" name="Assign_date"></td>
+					<td><input type="date" name="Assign_date" value="2011-01-13"></td>
 					<td><textarea name="desc"></textarea></td>
 					<td><textarea name="pendig_with"></textarea></td>
 					<td><textarea name="status"></textarea></td>

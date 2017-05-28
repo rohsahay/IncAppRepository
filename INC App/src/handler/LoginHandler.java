@@ -3,7 +3,6 @@ package handler;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -16,8 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dto.LoginDto;
-import dao.UserLoginDao;
-import dao.AdminLoginDao;
+import dao.UserLoginDao2;
 
 /**
  * Servlet implementation class LoginHandler
@@ -42,6 +40,7 @@ public class LoginHandler extends HttpServlet {
 			LoginDto ldto=new LoginDto();
 			ldto.setName(request.getParameter("cec_id"));
 			ldto.setPassword(request.getParameter("pswrd"));
+			ldto.setPrivilege(request.getParameter("usr_adm"));
 			String username=ldto.getName();
 			PrintWriter out=response.getWriter();
 			
@@ -53,7 +52,7 @@ public class LoginHandler extends HttpServlet {
 */			
 			if((request.getParameter("usr_adm")).equals("user")){
 				
-				UserLoginDao uldao=new UserLoginDao();
+				UserLoginDao2 uldao=new UserLoginDao2();
 				//user credential validation from database
 				boolean val=uldao.validate(ldto);
 					
@@ -96,8 +95,9 @@ public class LoginHandler extends HttpServlet {
 				}
 			}
 			else{
-				AdminLoginDao amdao=new AdminLoginDao();
-				boolean val=amdao.validate(ldto);
+				//Admin login validation from database
+				UserLoginDao2 uldao=new UserLoginDao2();
+				boolean val=uldao.validate(ldto);
 				if (val){
 					
 					logger.info("admin login Successful");

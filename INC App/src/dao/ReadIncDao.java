@@ -54,6 +54,7 @@ public class ReadIncDao {
 				comnt=rs.getString(6);
 				fe_analyst=rs.getString(7);
 				serialNo=rs.getString(8);
+				
 				logger.info(casenmbr+" "+date+" "+desc+" "+pendingwth+" "+status+" "+comnt+" "+fe_analyst+" "+serialNo);
 				
 				incident=new IncDto();

@@ -1,6 +1,7 @@
 package handler;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,8 +15,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dao.IncDao;
+import dao.IncDao2;
 import dao.ReadIncDao;
 import dto.IncDto;
+import dto.IncDto2;
 
 /**
  * Servlet implementation class UpdateHandler
@@ -23,7 +26,8 @@ import dto.IncDto;
 @WebServlet("/UpdateHandler")
 public class UpdateHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	static final Logger logger = LogManager.getLogger();   
+	static final Logger logger = LogManager.getLogger();
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -42,17 +46,17 @@ public class UpdateHandler extends HttpServlet {
 			HttpSession session=request.getSession();
 			String analyst=(String)session.getAttribute("name");
 			logger.info("In update handler,name in session as"+analyst);
-			IncDto inc=new IncDto();
+			IncDto2 inc=new IncDto2();
 			inc.setCasenmbr(request.getParameter("case_nmbr"));
-			inc.setDate(request.getParameter("Assign_date"));
+			inc.setDate(formatter.parse(request.getParameter("Assign_date")));
 			inc.setDesc(request.getParameter("desc"));
 			inc.setPendingwth(request.getParameter("pendig_with"));
 			inc.setStatus(request.getParameter("status"));
 			inc.setComnt(request.getParameter("comment"));
-			inc.setAnalyst(analyst);
-			IncDao idao=new IncDao();
+			inc.setFeanalyst(analyst);
+			IncDao2 idao=new IncDao2();
 			String filter=request.getParameter("filter");
-			boolean a=idao.update(inc,filter);
+			boolean a=idao.update(inc);
 			
 			if(a==true){
 				logger.info("record updated successfully");

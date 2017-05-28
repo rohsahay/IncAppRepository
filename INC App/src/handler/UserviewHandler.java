@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Servlet implementation class UserviewHandler
  */
 @WebServlet("/UserviewHandler")
 public class UserviewHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	static final Logger logger = LogManager.getLogger();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,6 +32,7 @@ public class UserviewHandler extends HttpServlet {
 		// TODO Auto-generated method stub
 		try{
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		logger.info("sending request to userview.jsp");
 		response.sendRedirect("UserView.jsp");
 		}
 		catch(Exception e){

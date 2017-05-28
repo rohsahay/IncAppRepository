@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dao.DeleteIncDao;
+import dao.IncDao2;
 import dto.User;
 
 /**
@@ -46,9 +47,11 @@ public class DeleteHandler extends HttpServlet {
 		User usr=new User();
 		usr.setCecid(n);
 		try{
-			DeleteIncDao.delete(n,c);
+			IncDao2 id = new IncDao2();		// using hibernate to delete
+			id.delete(n, c);				//
+//			DeleteIncDao.delete(n,c);		//using plain sql to delete
 			logger.info("reloading incidentQueue.jsp");
-			response.sendRedirect("Controller?hidden=inc_queue_view&a=1&b=10");
+			response.sendRedirect("Controller?hidden=inc_queue_view&a=0&b=10");
 		}
 		catch(Exception e){
 			e.printStackTrace();

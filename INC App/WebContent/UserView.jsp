@@ -19,7 +19,7 @@
 		<ul>
 			<li><a href="CreateInc.jsp">New Incident</a></li>
 			<li><a href="Controller?hidden=UserviewHandler">My Profile</a></li>
-			<li><a href="Controller?hidden=inc_queue_view&a=1&b=10">Incident Queue</a></li>
+			<li><a href="Controller?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
 			<li><a href="#">Link Four</a></li>
 			<li><a href="#">Link Five</a></li>
 		</ul>
