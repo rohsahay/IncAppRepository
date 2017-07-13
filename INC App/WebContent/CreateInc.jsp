@@ -19,13 +19,13 @@ body{
 <body>
 	<div id="header">
 		<h1>Incident Tracker</h1>
-		<a id="signout" href="LogoutHandler">Signout</a>
+		<a id="signout" href="logoutHandler.do">Signout</a>
 	</div>
 	<div id="nav">
 		<ul>
 			<li><a href="CreateInc.jsp">New Incident</a></li>
 			<li><a href="UserView.jsp">My Profile</a></li>
-			<li><a href="Controller?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
+			<li><a href="controller_inc.do?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
 			<li><a href="#">Link Four</a></li>
 			<li><a href="#">Link Five</a></li>
 		</ul>
@@ -38,12 +38,12 @@ body{
   			response.setHeader("Pragma","no-cache");
   			response.setDateHeader ("Expires", 0); 
   			if(session.getAttribute("login")==null)
-  		      response.sendRedirect("controller_inc?hidden=logout"); 
+  		      response.sendRedirect("controller_inc.do?hidden=logout"); 
   			
   		%>
 		The current date is: <%= new java.util.Date() %><br>
 		
-		<form action="controller_inc" method="post">
+		<form action="controller_inc.do" method="post">
 			<fieldset>
 			<table summary="This table is used to submit INCs">
 				<caption>Fill in the requested details. All fields are mandatory</caption>

@@ -3,44 +3,46 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import java.sql.ResultSet;
 
-import utl.ConnectionFactory;
-import dto.SignupDto;
+import utl.HibernateUtil;
+import dto.LoginDto;
 
 public class SignupDao {
 	Connection  conn=null;
 	PreparedStatement ps=null;
 	ResultSet rs=null;
-	public boolean signup(SignupDto sdto)throws SQLException{
-		int n=2;
+	Session session = null;
+	Transaction tx = null;
+	static final Logger logger = LogManager.getLogger();
+	
+	public boolean signup(LoginDto ldto)throws SQLException{
 		try{
-			System.out.println("welcome to SignupDao");
-			conn=ConnectionFactory.getConnection();
-			String insertQuery="insert into userlogin values(?,?)";
-			ps=conn.prepareStatement(insertQuery);
-			ps.setString(1,sdto.getName());	
-			ps.setString(2,sdto.getPassword());
-			System.out.println(sdto.getName());
-			System.out.println(sdto.getPassword());
-			n=ps.executeUpdate();
-			System.out.println(n);
-			
+			logger.info("welcome to sign-up dao for insert");
+			session = HibernateUtil.getSessionFactory().openSession();
+			tx = session.beginTransaction();
+			String id1 = (String) session.save(ldto);
+			logger.info("Incident save called with transaction, id="+id1);
+			tx.commit();
 		}
 		catch(Exception e){
+			if (tx!=null){
+				tx.rollback();
+			}
 			e.printStackTrace();
-			
-		}
-		finally{
-			ps.close();
-        	conn.close();
-		}
-		if(n==1){
-			return true;
-		}
-		else{
 			return false;
 		}
+		finally{
+			if (session!=null){
+				session.close();
+			}	
+		}
+		return true;
 	}
-
 }

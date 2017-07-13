@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.SignupDto;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import dto.LoginDto;
 import dao.SignupDao;
 /**
  * Servlet implementation class SignupHandler
@@ -17,7 +20,7 @@ import dao.SignupDao;
 @WebServlet(asyncSupported = true, urlPatterns = { "/SignupHandler" })
 public class SignupHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	static final Logger logger = LogManager.getLogger();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,16 +34,20 @@ public class SignupHandler extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try{
-			SignupDto sdto=new SignupDto();
-		
-			sdto.setName(request.getParameter("cec_id"));
-			sdto.setPassword(request.getParameter("pswrd"));
+
+			
+			LoginDto ldto=new LoginDto();
+			ldto.setName(request.getParameter("cec_id"));
+			ldto.setPassword(request.getParameter("pswrd"));
+			ldto.setPrivilege("user");
+			
 			PrintWriter out=response.getWriter();
-		
+			logger.info("In signup handler");
 			SignupDao sdao=new SignupDao();
-			boolean s=sdao.signup(sdto);
+			boolean s=sdao.signup(ldto);
+			
 			if(s){
-				out.println("user successfully signedup");
+				out.println("user successfully signed-up");
 				out.println("click to return to home page");
 			}
 			else{

@@ -19,13 +19,13 @@ body{
 <body>
 	<div id="header">
 		<h1>Incident Tracker</h1>
-		<a id="signout" href="LogoutHandler">Signout</a>
+		<a id="signout" href="logoutHandler.do">Signout</a>
 	</div>
 	<div id="nav">
 		<ul>
 			<li><a href="CreateInc.jsp">New Incident</a></li>
 			<li><a href="UserView.jsp">My Profile</a></li>
-			<li><a href="Controller?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
+			<li><a href="controller_inc.do?hidden=inc_queue_view&a=0&b=10">Incident Queue</a></li>
 			<li><a href="#">Link Four</a></li>
 			<li><a href="#">Link Five</a></li>
 		</ul>
@@ -44,7 +44,7 @@ body{
   		%>
 		The current date is: <%= new java.util.Date() %><br>
 		<%System.out.println("in updateInc.jsp "); %>
-		<form action="controller_inc" method="post">
+		<form action="controller_inc.do" method="post">
 			<fieldset>
 			<table style="width=100%">
 				<caption>Update the fields here</caption>

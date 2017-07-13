@@ -7,10 +7,14 @@
   <servlet>
     <servlet-name>Controller</servlet-name>
     <servlet-class>com.cisco.Controller</servlet-class>
+    <init-param>
+    	<param-name>servletConfig</param-name>
+    	<param-value>This is servlet config value</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>Controller</servlet-name>
-    <url-pattern>/controller_inc</url-pattern>
+    <url-pattern>/controller_inc.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>LoginHandler</servlet-name>
@@ -18,7 +22,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginHandler</servlet-name>
-    <url-pattern>/loginHandler</url-pattern>
+    <url-pattern>/loginHandler.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>LogoutHandler</servlet-name>
@@ -26,7 +30,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>LogoutHandler</servlet-name>
-    <url-pattern>/logoutHandler</url-pattern>
+    <url-pattern>/logoutHandler.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>InsertHandler</servlet-name>
@@ -34,7 +38,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>InsertHandler</servlet-name>
-    <url-pattern>/insertHandler</url-pattern>
+    <url-pattern>/insertHandler.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>UpdateHandler</servlet-name>
@@ -42,7 +46,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateHandler</servlet-name>
-    <url-pattern>/updateHandler</url-pattern>
+    <url-pattern>/updateHandler.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>IncReadHandler</servlet-name>
@@ -50,7 +54,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>IncReadHandler</servlet-name>
-    <url-pattern>/incReadHandler</url-pattern>
+    <url-pattern>/incReadHandler.do</url-pattern>
   </servlet-mapping>
   <servlet>
   	<servlet-name>DeleteHandler</servlet-name>
@@ -58,7 +62,15 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>DeleteHandler</servlet-name>
-  	<url-pattern>/deleteHandler</url-pattern>
+  	<url-pattern>/deleteHandler.do</url-pattern>
+  </servlet-mapping>
+   <servlet>
+  	<servlet-name>UserviewHandler</servlet-name>
+  	<servlet-class>handler.UserviewHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UserviewHandler</servlet-name>
+  	<url-pattern>/userviewHandler.do</url-pattern>
   </servlet-mapping>
   <context-param>
     <param-name>admin-email</param-name>

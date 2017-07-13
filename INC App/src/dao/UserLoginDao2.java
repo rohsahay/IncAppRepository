@@ -32,12 +32,14 @@ public class UserLoginDao2 {
 			session = HibernateUtil.getSessionFactory().openSession();
 			tx = session.beginTransaction();
 			
-			String hql = "FROM LoginDto AS L WHERE L.name=:emp_name AND L.password=:pwd";
+			String hql = "FROM LoginDto AS L WHERE L.name=:emp_name AND L.password=:pwd AND L.privilege=:pvg";
 			Query query = session.createQuery(hql);
 			query.setParameter("emp_name",ldto.getName());
 			query.setParameter("pwd",ldto.getPassword());
+			query.setParameter("pvg",ldto.getPrivilege());
 			logger.info(ldto.getName());
 			logger.info(ldto.getPassword());
+			logger.info(ldto.getPrivilege());
 			List results = query.list();
 			logger.info("got update from database successfully!!");
 			tx.commit();
@@ -50,10 +52,12 @@ public class UserLoginDao2 {
 */			
 			if(ritr.hasNext())
 				{	
+					logger.info("found value, returning TRUE");
 					return true;
 				}
 				else
 				{
+					logger.info("no values found, returning FALSE");
 					return false;
 				}
 							

@@ -13,7 +13,7 @@
 <body>
 	<div id="header">
 		<h1>Incident Tracker</h1>
-		<a id="signout" href="logoutHandler">Signout</a>
+		<a id="signout" href="logoutHandler.do">Signout</a>
 	</div>
 	<div id="nav">
 		<ul>

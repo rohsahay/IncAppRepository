@@ -40,7 +40,7 @@ public class DeleteHandler extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session=request.getSession();
 		if(session.getAttribute("login")==null)
-		response.sendRedirect("controller_inc?hidden=logout");
+		response.sendRedirect("controller_inc.do?hidden=logout");
 		String n=(String)session.getAttribute("name");
 		String c=(String)request.getParameter("c");
 		logger.info("Case Number to be deleted "+c);
@@ -51,7 +51,7 @@ public class DeleteHandler extends HttpServlet {
 			id.delete(n, c);				//
 //			DeleteIncDao.delete(n,c);		//using plain sql to delete
 			logger.info("reloading incidentQueue.jsp");
-			response.sendRedirect("Controller?hidden=inc_queue_view&a=0&b=10");
+			response.sendRedirect("controller_inc.do?hidden=inc_queue_view&a=0&b=10");
 		}
 		catch(Exception e){
 			e.printStackTrace();

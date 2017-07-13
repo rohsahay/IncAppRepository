@@ -60,12 +60,12 @@ public class UpdateHandler extends HttpServlet {
 			
 			if(a==true){
 				logger.info("record updated successfully");
-				RequestDispatcher rd=request.getRequestDispatcher("incReadHandler?msg=successful");
+				RequestDispatcher rd=request.getRequestDispatcher("incReadHandler.do?msg=successful");
 				rd.forward(request,response);
 			}
 			else{
 				logger.info("record failed to be udpdated");
-				RequestDispatcher rd=request.getRequestDispatcher("incReadHandler?msg=unsuccessful");
+				RequestDispatcher rd=request.getRequestDispatcher("incReadHandler.do?msg=unsuccessful");
 				rd.forward(request,response);
 			}
 		}

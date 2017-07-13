@@ -24,7 +24,7 @@
 		<br /><br />
 		<h1>Sign Up</h1>
 		<p>Fill up the form below to take advantage of our services</p>
-		<form action="controller_inc" method="get">
+		<form action="controller_inc" method="post">
 				<table>
 					<tr><td>First Name:</td><td><input type="text" name="fname" value="enter your first name" /></td></tr>
 					<tr><td>Last Name:</td> <td><input type="text" name="lname" value="enter your last name" /></td></tr>
@@ -33,9 +33,10 @@
 					<tr><td>Password:</td><td> <input type="password" name="pswrd" /></td></tr>
 					<tr><td>Comments:</td><td><textarea rows="4" cols="50"></textarea></td></tr>
 				</table> 
+				<input type="hidden" name="hidden" value="signup" />
+				<input type="submit" name="submit" value="SignUp" />
 		</form>
-		<input type="hidden" name="hidden" value="signup" />
-		<input type="submit" name="submit" value="SignUp" />
+		
 	</div>
 	<div id="trunk1"></div>
 </body>

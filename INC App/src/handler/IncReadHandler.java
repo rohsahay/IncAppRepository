@@ -43,7 +43,7 @@ public class IncReadHandler extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session=request.getSession();
 		if(session.getAttribute("login")==null)
-			response.sendRedirect("controller_inc?hidden=logout");
+			response.sendRedirect("controller_inc.do?hidden=logout");
 		String n=(String)session.getAttribute("name");
 		String startRow=(String)request.getParameter("a");
 		String endRow=(String)request.getParameter("b");

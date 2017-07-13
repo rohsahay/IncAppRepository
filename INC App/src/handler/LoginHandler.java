@@ -82,7 +82,7 @@ public class LoginHandler extends HttpServlet {
 						}
 					}
 						
-					response.sendRedirect("controller_inc?hidden=UserviewHandler");
+					response.sendRedirect("controller_inc.do?hidden=UserviewHandler");
 					
 				}
 					
@@ -109,7 +109,7 @@ public class LoginHandler extends HttpServlet {
 					else
 						logger.info("welcome back, session alredy exists");
 					
-					response.sendRedirect("controller_inc?hidden=adminview");
+					response.sendRedirect("controller_inc.do?hidden=adminview");
 								
 				}
 				else{

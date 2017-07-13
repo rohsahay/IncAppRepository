@@ -39,6 +39,7 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		logger.info(getServletConfig().getInitParameter("servletConfig")); //Servlet config value from DD
 		String n=request.getParameter("hidden");
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
@@ -73,33 +74,34 @@ public class Controller extends HttpServlet {
 */	
 			}
 			else if(n.equals("signup")){
+				logger.info("Dispatching request to sign-up handler");
 				RequestDispatcher rd=request.getRequestDispatcher("SignupHandler");
 				rd.forward(request, response);
 				
 			}
 			else if(n.equals("insert_inc")){
 				logger.info("reached controller for inserting inc, dispatching request to insertHandler");
-				RequestDispatcher rd=request.getRequestDispatcher("insertHandler");
+				RequestDispatcher rd=request.getRequestDispatcher("insertHandler.do");
 				rd.forward(request, response);
 				
 			}		
 //to view list of incidents for a user			
 			else if(n.equals("inc_queue_view")){
-				RequestDispatcher rd=request.getRequestDispatcher("IncReadHandler");
+				RequestDispatcher rd=request.getRequestDispatcher("incReadHandler.do");
 				rd.forward(request, response);
 			}
 			else if(n.equals("update_inc")){
 				logger.info("in controller for update filter: "+request.getParameter("filter"));
 				logger.info("value of a and b in controller"+request.getParameter("a")+" "+request.getParameter("b"));
 				logger.info("value of act"+request.getParameter("act"));
-				RequestDispatcher rd=request.getRequestDispatcher("updateHandler");
+				RequestDispatcher rd=request.getRequestDispatcher("updateHandler.do");
 				rd.forward(request, response);
 			}
 			else if(n.equals("delete_inc")){
 				logger.info("in controller for deletion");
 				logger.info("value of c in controller "+request.getParameter("c"));
 				logger.info("value of act "+request.getParameter("act"));
-				RequestDispatcher rd=request.getRequestDispatcher("deleteHandler");
+				RequestDispatcher rd=request.getRequestDispatcher("deleteHandler.do");
 				rd.forward(request, response);
 			}
 		}

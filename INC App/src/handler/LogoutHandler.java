@@ -41,7 +41,7 @@ public class LogoutHandler extends HttpServlet {
 			logger.info("successfully logged out");
 			
 			
-			RequestDispatcher rd=request.getRequestDispatcher("controller_inc?hidden=logout");
+			RequestDispatcher rd=request.getRequestDispatcher("controller_inc.do?hidden=logout");
 			rd.forward(request, response);
 		}
 		catch(Exception e){
