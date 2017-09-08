@@ -25,5 +25,8 @@
     	<logger name="org.hibernate" level="info" additivity="false">
     		<AppenderRef ref="Console" />
     	</logger>
+    	<logger name="utl" level="info" additivity="false">
+    		<AppenderRef ref="Console" />
+    	</logger>
     </Loggers>
 </Configuration>

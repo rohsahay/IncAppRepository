@@ -79,7 +79,20 @@
   <listener>
     <listener-class>utl.MyServletContextListener</listener-class>
   </listener>
+  <listener>
+  	<listener-class>utl.MyINCappSessionCounter</listener-class>
+  </listener>
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
+  <!-- To invalidate/disable all scripting elements(sciptlet,expression,declaration) in all JSPs -->
+  <!-- 
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<scripting-invalid>false</scripting-invalid>	Set to true to disable scripting elements
+  		<el-ignored>false</el-ignored>					Set to true to disable EL			
+  	</jsp-property-group>
+  </jsp-config>
+  -->
 </web-app>
